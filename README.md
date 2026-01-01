@@ -6,4 +6,11 @@ From our exploratory data analysis, we used the MAX() function to find the highe
 ### Highest Layoffs
 Unsiprisingly, bigger companies like Amazon (18150 layoffs), Google (12000 layoffs)and Meta (11000 layoffs) had the greatest number of layoffs for all the companies in the global dataset. This makes sense as these companies have the most employees. However, looking at the percentage of layoffs, for example Amazon (2.5% laid off), are nowhere near at a level of collapsing like britishvolt who had every employee let off, yet britishvolt only had 206 employees across the whole company. It is imperative to always look at the percentage of data, as looking at the raw total only tells you the volume, not the situation of a company. Also, because this dataset was between 2020 and 2023, a high amount of layoffs for companies could be due to the covid 19 pandemic- companies did not have the capacity to pay people salaries while not bringing any money themselves. From a simple query we found out that the industries with the highest layoffs was consumer, retail and transportation, which is expected as the global lockdown stoped human interaction, thus companies had no choice but to let go of employees. From another query I found at that United States had the greatest number of layoffs (256,559). This value was a lot greater than the second greatest number of layoffs which was India (35,993). This may not be represetative of India and all the other countries as not every company in the wworld is in the dataset. Vietnam had the highest average laid off (83.3%) but United states had an average of 25.2%
 
-###
+### Funds Raised
+From one query, we found at that Lithuania (although there was only one row in the enitre dataset for Lithuania- therefore not as representative) had the highest average funds raised, followed by Netherlands, China and India. We did this jusing the agggregated function AVG with the OVER(partition by) function, in which we partitioned by country. From another query we also found out the highest funds raised per company for every country. We did this using a CTE in which we made a column which assigned a row number to a partition of country, and ordering the funds raised descending (and this was as funds raised ranked) so that when we selected funds raised ranked = 1 (and country) from the CTE it would retrun the highest funds raised by a company for each country. The highest funds raised for United States was Netflix.
+
+
+
+
+
+
