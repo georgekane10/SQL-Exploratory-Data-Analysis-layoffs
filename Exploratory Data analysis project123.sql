@@ -22,7 +22,7 @@ WHERE percentage_laid_off = 1
 ORDER BY funds_raised_millions DESC
 ;
 
-SELECT company, SUM(total_laid_off)
+SELECT company, SUM(total_laid_off), ROUND(AVG(percentage_laid_off), 4)
 FROM layoffs_staging5
 GROUP BY company
 ORDER BY 2 DESC
