@@ -41,12 +41,19 @@ ORDER BY 2 DESC
 ;
 
 
-SELECT country, SUM(total_laid_off)
+SELECT country, SUM(total_laid_off) AS total_laid_off
+ROUND(AVG(percentage_laid_off), 4) AS avg_prcnt_laid_off
 FROM layoffs_staging5
 GROUP BY country
 ORDER BY 2 DESC
 ;
 
+SELECT country, SUM(total_laid_off) AS total_laid_off, 
+ROUND(AVG(percentage_laid_off), 4) AS avg_prcnt_laid_off
+FROM layoffs_staging5
+GROUP BY country
+ORDER BY 3 DESC
+;
 
 SELECT YEAR(`date`), SUM(total_laid_off)
 FROM layoffs_staging5
